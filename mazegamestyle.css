@@ -1,0 +1,31 @@
+
+table {
+	border-style:none;
+	}
+tr, td {
+	border:solid 2px black;
+	padding:40px;
+}
+#maze {
+	display:block;
+	max-width:500px;
+}
+#ball {
+	display:block;
+	max-height:25px;
+	width:25px
+	height:25px;
+}
+#star {
+	display:block;
+	max-height:25px;
+	width:25px
+	height:25px;
+}
+#controls {
+	float:right;
+}
+#controls.img {
+	display:block;
+	max-width:100px;
+}

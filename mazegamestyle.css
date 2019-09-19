@@ -22,10 +22,12 @@ tr, td {
 	width:25px
 	height:25px;
 }
-#controls {
+#controlbox {
 	float:right;
 }
-#controls.img {
-	display:block;
-	max-width:100px;
+
+.controls {
+	display:inline-block;
+	max-width:50px;
+	width:50px;
 }

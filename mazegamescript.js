@@ -1,17 +1,70 @@
 var ball = "ball.png";
 
-var column = ["a","b","c","d","e","f","g"];
+var columns = ["a","b","c","d","e","f","g","h","i","j"];
 
-var row = [1,2,3,4,5,6,7,8,9,10];
+var rows = [1,2,3,4,5,6,7];
 
-var startColumn = column[column.length - 1];
-var startRow = row[row.length - row.length + 1];
+var startColumn = columns.length - 1;
+console.log(startColumn);
 
-var startPosition =[startRow];
+var startRow = rows.length - rows.length + 1;
+console.log(startRow);
+
+var startPosition = [columns[startColumn], rows[startRow]];
 console.log(startPosition);
 
-function moveLeft() {
-	startPosition = startPosition[startRow -1];
-	console.log(startPosition);
+var newPosition = [columns[startColumn], rows[startRow]];
+
+var column = newPosition[0];
+
+var row = newPosition[1];
+
+function moveBall() {
+	document.getElementById(column + row).innerHTML = '<img src="ball.png" id="ball" />';
 }
+
+function oldPosition() {
+	document.getElementById(column + row).innerHTML = "";
+}
+
+function moveLeft() {
+	oldPosition();
+	startColumn = startColumn - 1;
+	newPosition = [columns[startColumn], rows[startRow]];
+	console.log(newPosition);
+	column = newPosition[0];
+	row = newPosition[1];
+	moveBall();
+}
+
+function moveRight() {
+	oldPosition();
+	startColumn = startColumn + 1;
+	newPosition = [columns[startColumn], rows[startRow]];
+	console.log(newPosition);
+	column = newPosition[0];
+	row = newPosition[1];
+	moveBall()
+}
+
+function moveUp() {
+	oldPosition();
+	startRow = startRow - 1;
+	newPosition = [columns[startColumn], rows[startRow]];
+	console.log(newPosition);
+	column = newPosition[0];
+	row = newPosition[1];
+	moveBall();
+}
+
+function moveDown() {
+	oldPosition();
+	startRow = startRow + 1;
+	newPosition = [columns[startColumn], rows[startRow]];
+	console.log(newPosition);
+	column = newPosition[0];
+	row = newPosition[1];
+	moveBall();
+}
+
 
